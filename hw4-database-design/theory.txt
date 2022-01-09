@@ -1,0 +1,37 @@
+a. R(A,B,C,D,E) with functional dependencies D → B, CE → A
+
+	CE->A is a bad FD/violates BCNF, split to (A,C,E), (B,C,D,E)
+	
+	D->B is also bad/violates, so split to (B,D), (C,D,E)
+
+- Ans: R2(A,C,E), R3(B,D), R4(C,D,E)
+
+
+
+b. S(A,B,C,D,E) with functional dependencies A → E, BC → A, DE → B
+
+	DE->B is bad/violates, so split to (B,D,E), (A,C,D,E)
+
+	A->E is also bad/violates, so split to (A,E), (A,D,C)
+
+- Ans: S2(B,D,E), S3(A,E), S4(A,C,D)
+
+
+
+c. All subsets of {A,B,C,D} are closed
+
+- Ans: empty set/none?
+
+
+
+d. The only closed subsets of {A,B,C,D} are {} and {A,B,C,D}
+
+- Ans: (A->B), (B->C), (C->D), (D->A); (AB->ABCD), (AC->ABCD), (AD->ABCD), (BC->ABCD), (BD->ABCD), (CD->ABCD); (ABC->ABCD), (ABD->ABCD), (ACD->ABCD), (BCD->ABCD)
+
+
+
+e. The only closed subsets of {A,B,C,D} are {}, {B,C}, and {A,B,C,D}
+
+- Ans: (B->C), (C->B), (A->BCD), (D->ABC)
+
+
