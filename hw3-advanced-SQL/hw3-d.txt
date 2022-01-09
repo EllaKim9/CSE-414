@@ -1,0 +1,6 @@
+It might be because of my lack of experience using the command line often, but I found this DBMS cloud service very intuitive (besides the set-up, just the actual use of the databases) to use and got very satisfying/fast results. 
+
+I like the idea of offering a DBMS as a service in a public cloud in certain scenarios:
+
+This offering of such a service is extremely helpful for organizations like schools who would like to utilize free data and resources to teach databases as it is so accessible.
+However, I do not think it would be very helpful for organizations who manage sensitive information (i.e. identification), as it is public. 
