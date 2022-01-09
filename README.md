@@ -1,2 +1,2 @@
 # CSE-414-Introduction-to-Database-Systems
-Assignments
+Assignments, project in SQL & Python
