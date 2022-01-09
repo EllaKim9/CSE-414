@@ -1,0 +1,90 @@
+--2.1
+CREATE TABLE Edges (
+Source INT,
+Destination INT);
+
+--2.2
+INSERT INTO Edges
+VALUES (10, 5),
+(6,5),
+(1,3),
+(4,4);
+
+--2.3
+SELECT * FROM Edges;
+
+--2.4
+SELECT E.Source
+FROM Edges AS E;
+
+--2.5
+SELECT *
+FROM Edges as E
+WHERE E.Source > E.Destination;
+
+--2.6
+/*As the documentation says: "Rigidly-typed database (SQLite3 uses dynamic-typing) will convert the string '123' into an integer 123 and the integer 456 into a string '456' prior to doing the insert." 
+Meaning, the '' indicating it is a string, would convert into the integer type the variables Source and Destination are.*/
+
+
+--3
+CREATE TABLE MyRestaurants (
+Name VARCHAR(256),
+Crusine VARCHAR(256),
+Distance INT,
+DateLast VARCHAR(10),
+Review INT);
+
+
+--4
+INSERT INTO MyRestaurants
+VALUES ('Hiroshis', 'Hawaiian', 11, '2021-08-20', 1),
+('Local Point', 'Variety', 5, '2020-03-02', 0),
+('The Alley', 'Korean', 3, '2020-02-17', 1),
+('Kizuki', 'Japanese', 20, '2021-09-09', 1),
+('Chipotle', 'Mexican', 3, '2021-09-28', NULL);
+
+
+--5.1
+.header ON
+.mode list
+.separator ','
+SELECT * FROM MyRestaurants;
+
+.mode list
+SELECT * FROM MyRestaurants;
+
+.mode column
+.width 15 15 15 15 15
+SELECT * FROM MyRestaurants;
+
+--5.2
+.header OFF
+
+.mode list
+.separator ','
+SELECT * FROM MyRestaurants;
+
+.mode list
+SELECT * FROM MyRestaurants;
+
+.mode column
+.width 15 15 15 15 15
+SELECT * FROM MyRestaurants;
+
+
+--6
+SELECT M.Name, M.Distance
+FROM MyRestaurants AS M
+WHERE M.Distance <= 20
+ORDER BY Name;
+
+
+--7
+SELECT * FROM MyRestaurants AS M
+WHERE M.Review = 1 AND M.DateLast < date('now', '-3 month');
+
+
+--8
+SELECT * FROM MyRestaurants AS M
+WHERE M.Distance <= 10;
